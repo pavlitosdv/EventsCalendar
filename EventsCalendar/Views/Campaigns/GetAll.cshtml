@@ -1,0 +1,45 @@
+﻿@model IEnumerable<EventsCalendar.ViewModels.CampaignViewModel>
+
+
+@{
+    ViewBag.Title = "All Campains";
+}
+
+<h2>Get All Campaings</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Campaign.Snapshot.DatasetID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Campaign.CampaignName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Campaign.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Campaign.EndDate)
+        </th>        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dataset)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Campaign.CampaignName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Campaign.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Campaign.EndDate)
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<EventsCalendar.Models.Campaign>
+
+@{
+    ViewBag.Title = "Campaigns Page";
+}
+
+<h2>Last 3 Campains</h2>
+
+<p>
+    @Html.ActionLink("Click to check all Campaigns", "GetAll", "Campaigns", new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Snapshot.DatasetID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CampaignName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Snapshot.CreationDate)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Snapshot.DatasetID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CampaignName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Snapshot.CreationDate)
+            </td>
+        </tr>
+    }
+
+
+</table>
